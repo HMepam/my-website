@@ -19,9 +19,11 @@ export default function decorate(block) {
         div.className = 'menu-item-body';
       }
     });
-    li.addEventListener('click', () => {
-      window.location.href = link;
-    });
+    if (link) {
+      li.addEventListener('click', () => {
+        window.location.href = link;
+      });
+    }
     ul.append(li);
   });
   ul.querySelectorAll('img')
