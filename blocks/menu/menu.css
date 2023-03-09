@@ -23,16 +23,19 @@
     display: flex;
     flex-direction: column;
     min-height: 30px;
-    padding: 3px;
+    padding: 5px;
 }
 
-.menu .menu-item-body {
-    font-size: 10px;
+.menu-item-body {
+    font-size: 12px;
     height: 100%;
     text-align: center;
+    overflow: hidden;
+    color: #8c8c8c;
+    padding: 0 10px;
 }
 
-.menu .menu-item-icon {
+.menu-item-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +43,58 @@
     height: 100%;
 }
 
-.menu .menu-item-icon img {
+.menu-item-icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     height: 100%;
     width: 100%;
+}
+
+.display-none {
+    display: none;
+}
+
+.menu-item-icon img,
+ .menu-item-icon picture {
+    width: 80%;
+}
+
+.menu-item-icon picture {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 48em) {
+    .menu {
+        bottom: unset;
+        width: 100%;
+        max-width: 100px;
+        left: unset;
+        right: 0;
+        top: 0;
+        height: 100%;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .menu ul > li {
+        height: 100%;
+        border-left: unset;
+        border-right: unset;
+        border-top: 1px solid #8f8f8f;
+        border-bottom: 1px solid #8f8f8f;
+        padding: 3px;
+    }
+
+    .menu-item-body {
+        font-size: 10px;
+    }
 }
