@@ -4,21 +4,24 @@ export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {
-    const li = document.createElement('li');
-    li.innerHTML = row.innerHTML;
+    const div = document.createElement('div');
+    div.innerHTML = row.innerHTML;
+    div.className = 'menu-item';
     let link;
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) {
-        if (div.children[0].hasAttribute('href')) {
-          link = div.children[0].href;
+    [...div.children].forEach((elem) => {
+      if (elem.children.length === 1 && elem.querySelector('picture')) {
+        if (elem.children[0].hasAttribute('href')) {
+          link = elem.children[0].href;
         }
-        div.className = 'menu-item-icon';
-      } else if (div.children.length === 0) {
-        div.className = 'display-none';
+        elem.className = 'menu-item-icon';
+      } else if (elem.children.length === 0) {
+        elem.className = 'display-none';
       } else {
-        div.className = 'menu-item-body';
+        elem.className = 'menu-item-body';
       }
     });
+    const li = document.createElement('li');
+    li.append(div);
     if (link) {
       li.addEventListener('click', () => {
         window.location.href = link;
