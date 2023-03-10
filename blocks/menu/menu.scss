@@ -43,10 +43,8 @@
             align-content: center;
             padding: 3px;
 
-            :first-child {
-                .menu-item-icon {
-                    height: 100%;
-                }
+            &:first-child .menu-item-icon {
+                height: 100%;
             }
 
             @media (max-width: 84em) {
