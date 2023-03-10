@@ -391,7 +391,8 @@ export async function loadBlock(block) {
     const { blockName } = block.dataset;
     try {
       const cssLoaded = new Promise((resolve) => {
-        loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`, resolve);
+        loadCSS(`${window.hlx.codeBasePath}/styles/css/${blockName}/${blockName}.css`, resolve);
+        loadCSS(`${window.hlx.codeBasePath}/styles/css/global.css`, resolve);
       });
       const decorationComplete = new Promise((resolve) => {
         (async () => {

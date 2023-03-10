@@ -1,0 +1,114 @@
+.menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: unset;
+    width: 108px;
+    height: 100%;
+    background-color: #fff;
+
+    @media (max-width: 84em) {
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: unset;
+        height: 108px;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-left: 1px solid #ebebeb;
+        list-style-type: none;
+        height: 100%;
+
+        @media (max-width: 84em) {
+            border-top: 1px solid #ebebeb;
+            border-left: unset;
+            height: 100%;
+            flex-direction: row;
+        }
+
+        li {
+            cursor: pointer;
+            border-bottom: 1px solid #ebebeb;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            align-content: center;
+            padding: 3px;
+
+            :first-child {
+                .menu-item-icon {
+                    height: 100%;
+                }
+            }
+
+            @media (max-width: 84em) {
+                width: 100%;
+                height: 100%;
+                border-right: 1px solid #ebebeb;
+                border-bottom:unset;
+            }
+
+            .menu-item {
+                width: 90px;
+                height: 90px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+
+
+
+                .menu-item-body {
+                    text-align: center;
+                    overflow: hidden;
+                    line-height: 12px;
+                    color: #666;
+                    font-size: 12px;
+
+
+                    @media (max-width: 84em) {
+                        height: 100%;
+                        padding: 0 5px;
+                        //font-size: 10px;
+                    }
+                }
+
+                .menu-item-icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-content: center;
+
+                    @media (max-width: 84em) {
+                        height: 100%;
+                    }
+
+                    a {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: center;
+                    }
+
+                    img, picture {
+                        width: 75px;
+                    }
+
+                    picture {
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}

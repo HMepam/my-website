@@ -15,7 +15,7 @@ export default function decorate(block) {
         }
         elem.className = 'menu-item-icon';
       } else if (elem.children.length === 0) {
-        elem.className = 'display-none';
+        elem.className = 'G-none';
       } else {
         elem.className = 'menu-item-body';
       }

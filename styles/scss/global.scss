@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'flex';
+@import 'box-model';
+
+.G-capitalize {
+  text-transform : capitalize;
+}
+
+.G-background-image {
+  background-size     : cover;
+  background-position : center;
+  background-repeat   : no-repeat;
+}
+
+.G-half {
+  width : calc(50% - 20px) !important;
+}
+
+.G-none {
+  display: none;
+}

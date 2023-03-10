@@ -1,0 +1,40 @@
+// Main colors
+
+$black        : #000000;
+$white        : #ffffff;
+$gray         : #A2A3AD;
+$light        : #F6F6F6;
+$light-gray   : #cccccc;
+$green        : #007844;
+$light-green  : #0bbf6b;
+$red          : #9d0000;
+$light-red    : #dc444e;
+$yellow       : #e7ad00;
+$light-yellow : #fbc43a;
+$orange       : #F0641E;
+$blue         : #0a73cc;
+
+$black-hover        : #2f2f2f;
+$orange-hover       : #ee5d14;
+$blue-hover         : #276cda;
+
+$black-active        : #2f2f2f;
+$orange-active       : #f05000;
+$blue-active         : #1262e4;
+
+// Alternative styles
+$shadow : 0 0 10px rgba(0, 0, 0, .1);
+$error-shadow: 0 0 15px rgba(209, 0, 0, 0.6);
+$radius : 3px;
+$gradient : linear-gradient(to right, $red, #FD956B);
+// App Components styles
+$body-color : $light;
+
+$modal-z: 1000;
+$header-z: 500;
+
+$left-side-width     : 300px;
+$header-height       : 80px;
+$content-top-padding : 20px;
+$padding             : 40px;
+$input-height        : 35px;
