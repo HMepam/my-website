@@ -71,17 +71,15 @@ export default function decorate(block) {
   listWrapper.className = 'list-wrapper';
 
   listCover.addEventListener('click', () => {
-    const body = document.getElementsByTagName('body');
-    body.classList.remove('modal-open');
+    document.body.classList.remove('modal-open');
     const list = document.getElementsByClassName('list-wrapper');
-    list.style.display = 'none';
+    list[0].style.display = 'none';
   });
 
   hamburger.addEventListener('click', () => {
-    const body = document.getElementsByTagName('body');
     const list = document.getElementsByClassName('list-wrapper');
-    list.style.display = '';
-    body.classList.add('modal-open');
+    list[0].style.display = 'unset';
+    document.body.classList.add('modal-open');
   });
 
   desktopView.append(ul.cloneNode(true));
