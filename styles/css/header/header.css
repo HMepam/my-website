@@ -30,6 +30,7 @@ header nav[aria-expanded="true"] {
   header nav {
     display: flex;
     justify-content: space-between; }
+
   header nav[aria-expanded="true"] {
     min-height: 0;
     overflow: visible; } }
@@ -155,12 +156,15 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     visibility: visible;
     white-space: nowrap; }
+
   header nav[aria-expanded="true"] .nav-sections {
     align-self: unset; }
+
   header nav .nav-sections .nav-drop {
     position: relative;
     padding-right: 16px;
     cursor: pointer; }
+
   header nav .nav-sections .nav-drop::after {
     content: '';
     display: inline-block;
@@ -173,22 +177,27 @@ header nav .nav-sections ul > li > ul > li {
     border: 2px solid currentcolor;
     border-radius: 0 1px 0 0;
     border-width: 2px 2px 0 0; }
+
   header nav .nav-sections .nav-drop[aria-expanded="true"]::after {
     top: unset;
     bottom: .5em;
     transform: rotate(315deg); }
+
   header nav .nav-sections ul {
     display: flex;
     gap: 2em;
     margin: 0;
     font-size: var(--body-font-size-xs); }
+
   header nav .nav-sections > ul > li {
     flex: 0 1 auto;
     position: relative;
     font-weight: 500; }
+
   header nav .nav-sections > ul > li > ul {
     display: none;
     position: relative; }
+
   header nav .nav-sections > ul > li[aria-expanded="true"] > ul {
     display: block;
     position: absolute;
@@ -198,6 +207,7 @@ header nav .nav-sections ul > li > ul > li {
     padding: 1em;
     background-color: var(--highlight-background-color);
     white-space: initial; }
+
   header nav .nav-sections > ul > li > ul::before {
     content: '';
     position: absolute;
@@ -208,6 +218,7 @@ header nav .nav-sections ul > li > ul > li {
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-bottom: 8px solid var(--highlight-background-color); }
+
   header nav .nav-sections > ul > li > ul > li {
     padding: 8px 0; } }
 

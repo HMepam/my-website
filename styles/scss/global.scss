@@ -1,6 +1,5 @@
-@import 'variables';
-@import 'flex';
-@import 'box-model';
+@import url('flex');
+@import url('box-model');
 
 .G-capitalize {
   text-transform : capitalize;

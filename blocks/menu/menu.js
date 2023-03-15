@@ -23,12 +23,12 @@ export default function decorate(block) {
   mobileMenu.append(logo, hamburger);
 
   const ul = document.createElement('ul');
-  [...block.children].forEach((row) => {
+  [...block.children].forEach(row => {
     const div = document.createElement('div');
     div.innerHTML = row.innerHTML;
     div.className = 'menu-item';
     let link;
-    [...div.children].forEach((elem) => {
+    [...div.children].forEach(elem => {
       if (elem.children.length === 1 && elem.querySelector('picture')) {
         if (elem.children[0].hasAttribute('href')) {
           link = elem.children[0].href;
@@ -49,13 +49,13 @@ export default function decorate(block) {
     }
     ul.append(li);
   });
-  ul.querySelectorAll('img')
-    .forEach((img) => (
-      img.closest('picture')
-        .replaceWith(
-          createOptimizedPicture(img.src, img.alt, false, [{ with: 1 }]),
-        )
-    ));
+  ul.querySelectorAll('img').forEach(img =>
+    img
+      .closest('picture')
+      .replaceWith(
+        createOptimizedPicture(img.src, img.alt, false, [{ with: 1 }]),
+      ),
+  );
 
   const mobileView = document.createElement('div');
   mobileView.className = 'mobile';

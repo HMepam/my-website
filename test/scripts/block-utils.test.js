@@ -7,13 +7,19 @@ import sinon from 'sinon';
 
 let blockUtils;
 
-document.body.innerHTML = await readFile({ path: './dummy.html' });
-document.head.innerHTML = await readFile({ path: './head.html' });
+document.body.innerHTML = await readFile({
+  path: './dummy.html',
+});
+document.head.innerHTML = await readFile({
+  path: './head.html',
+});
 
 describe('Utils methods', () => {
   before(async () => {
     blockUtils = await import('../../scripts/lib-franklin.js');
-    document.body.innerHTML = await readFile({ path: './body.html' });
+    document.body.innerHTML = await readFile({
+      path: './body.html',
+    });
   });
 
   it('Sanitizes class name', async () => {
@@ -22,27 +28,29 @@ describe('Utils methods', () => {
   });
 
   it('Extracts metadata', async () => {
-    expect(blockUtils.getMetadata('description')).to.equal('Lorem ipsum dolor sit amet.');
+    expect(blockUtils.getMetadata('description')).to.equal(
+      'Lorem ipsum dolor sit amet.',
+    );
     expect(blockUtils.getMetadata('og:title')).to.equal('Foo');
   });
 
   it('Loads CSS', async () => {
     // loads a css file and calls callback
-    const load = await new Promise((resolve) => {
-      blockUtils.loadCSS('/test/scripts/test.css', (e) => resolve(e));
+    const load = await new Promise(resolve => {
+      blockUtils.loadCSS('/test/scripts/test.css', e => resolve(e));
     });
     expect(load).to.equal('load');
     expect(getComputedStyle(document.body).color).to.equal('rgb(255, 0, 0)');
 
     // does nothing if css already loaded
-    const noop = await new Promise((resolve) => {
-      blockUtils.loadCSS('/test/scripts/test.css', (e) => resolve(e));
+    const noop = await new Promise(resolve => {
+      blockUtils.loadCSS('/test/scripts/test.css', e => resolve(e));
     });
     expect(noop).to.equal('noop');
 
     // calls callback in case of error
-    const error = await new Promise((resolve) => {
-      blockUtils.loadCSS('/test/scripts/nope.css', (e) => resolve(e));
+    const error = await new Promise(resolve => {
+      blockUtils.loadCSS('/test/scripts/nope.css', e => resolve(e));
     });
     expect(error).to.equal('error');
   });
@@ -70,16 +78,29 @@ describe('Utils methods', () => {
   });
 
   it('Creates optimized picture', async () => {
-    const $picture = blockUtils.createOptimizedPicture('/test/scripts/mock.png');
+    const $picture = blockUtils.createOptimizedPicture(
+      '/test/scripts/mock.png',
+    );
     expect($picture.querySelector(':scope source[type="image/webp"]')).to.exist; // webp
-    expect($picture.querySelector(':scope source:not([type="image/webp"])')).to.exist; // fallback
-    expect($picture.querySelector(':scope img').src).to.include('format=png&optimize=medium'); // default
+    expect($picture.querySelector(':scope source:not([type="image/webp"])')).to
+      .exist; // fallback
+    expect($picture.querySelector(':scope img').src).to.include(
+      'format=png&optimize=medium',
+    ); // default
   });
 
   it('Normalizes headings', async () => {
-    const numHeadings = document.querySelectorAll('h1, h2, h3, h4, h5, h6').length;
-    blockUtils.normalizeHeadings(document.querySelector('main'), ['h1', 'h2', 'h3']);
-    expect(document.querySelectorAll('h1, h2, h3, h4, h5, h6').length).to.equal(numHeadings);
+    const numHeadings = document.querySelectorAll(
+      'h1, h2, h3, h4, h5, h6',
+    ).length;
+    blockUtils.normalizeHeadings(document.querySelector('main'), [
+      'h1',
+      'h2',
+      'h3',
+    ]);
+    expect(document.querySelectorAll('h1, h2, h3, h4, h5, h6').length).to.equal(
+      numHeadings,
+    );
     expect(document.querySelectorAll('h4, h5, h6').length).to.equal(0);
   });
 });
@@ -97,14 +118,14 @@ describe('Sections and blocks', () => {
 
   it('Loads blocks', async () => {
     await blockUtils.loadBlocks(document.querySelector('main'));
-    document.querySelectorAll('main .block').forEach(($block) => {
+    document.querySelectorAll('main .block').forEach($block => {
       expect($block.dataset.blockStatus).to.equal('loaded');
     });
   });
 
   it('Updates section status', async () => {
     blockUtils.updateSectionsStatus(document.querySelector('main'));
-    document.querySelectorAll('main .section').forEach(($section) => {
+    document.querySelectorAll('main .section').forEach($section => {
       expect($section.dataset.sectionStatus).to.equal('loaded');
     });
 
@@ -117,8 +138,12 @@ describe('Sections and blocks', () => {
   });
 
   it('Reads block config', async () => {
-    document.querySelector('main .section > div').innerHTML += await readFile({ path: './config.html' });
-    const cfg = blockUtils.readBlockConfig(document.querySelector('main .config'));
+    document.querySelector('main .section > div').innerHTML += await readFile({
+      path: './config.html',
+    });
+    const cfg = blockUtils.readBlockConfig(
+      document.querySelector('main .config'),
+    );
     expect(cfg).to.deep.include({
       'prop-0': 'Plain text',
       'prop-1': 'Paragraph',

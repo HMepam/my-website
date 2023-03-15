@@ -10,20 +10,27 @@ let scripts;
 /** @type {import('./types').LibFranklin} */
 let lib;
 
-document.body.innerHTML = await readFile({ path: './dummy.html' });
-document.head.innerHTML = await readFile({ path: './head.html' });
+document.body.innerHTML = await readFile({
+  path: './dummy.html',
+});
+document.head.innerHTML = await readFile({
+  path: './head.html',
+});
 
 describe('Core Helix features', () => {
   before(async () => {
     scripts = await import('../../scripts/scripts.js');
     lib = await import('../../scripts/lib-franklin.js');
 
-    document.body.innerHTML = await readFile({ path: './body.html' });
+    document.body.innerHTML = await readFile({
+      path: './body.html',
+    });
   });
 
   it('Initializes window.hlx', async () => {
     // simulate code base path and turn on lighthouse
-    document.head.appendChild(document.createElement('script')).src = '/foo/scripts/scripts.js';
+    document.head.appendChild(document.createElement('script')).src =
+      '/foo/scripts/scripts.js';
     window.history.pushState({}, '', `${window.location.href}&lighthouse=on`);
     lib.setup();
 
