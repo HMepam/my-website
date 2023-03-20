@@ -156,7 +156,6 @@ function getSortedDataFromBlock(block) {
 }
 
 export default function decorate(block) {
-  console.log(block, '000');
   const [data, dates] = getSortedDataFromBlock(block);
 
   const div = document.createElement('div');

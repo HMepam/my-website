@@ -9,7 +9,7 @@ main .section {
     margin-left: unset;
 
     &:first-child {
-      margin-top: 420px;
+      margin-top: 400px;
     }
   }
 }
@@ -20,7 +20,7 @@ main .agenda-container {
   top: 0;
   bottom: 0;
   width: 560px;
-  background-color: rgb(0 40 140);
+  background-color: #00288CFF;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -39,7 +39,7 @@ main .agenda-container {
     right: 0;
     left: 0;
     width: 100%;
-    height: 420px;
+    height: 400px;
   }
 }
 
@@ -49,7 +49,7 @@ main .agenda-container {
   .description {
     display: flex;
     justify-content: flex-start;
-    color: rgb(255 255 255);
+    color: #fff;
     font-size: 22px;
     font-weight: 500;
   }
@@ -80,7 +80,7 @@ main .agenda-container {
     }
 
     &::-webkit-scrollbar-thumb:active {
-      background: rgb(138 138 138);
+      background: #8A8A8AFF;
       border-radius: 10px;
     }
 
@@ -91,14 +91,14 @@ main .agenda-container {
       height: 36px;
       width: 68px;
       min-width: 68px;
-      border: 1px solid rgb(8 66 137);
-      color: rgb(122 179 255);
+      border: 1px solid #084289FF;
+      color: #7AB3FFFF;
       padding: 0;
       font-size: 14px;
 
       &:hover {
-        color: rgb(255 255 255);
-        background-color: rgb(193 198 200);
+        color: #fff;
+        background-color: #C1C6C8FF;
       }
     }
   }
@@ -118,7 +118,7 @@ main .agenda-container {
         padding: 12px 0;
 
         span {
-          color: rgb(255 255 255);
+          color: #fff;
           font-size: 16px;
 
           &:first-child {
@@ -137,9 +137,9 @@ main .agenda-container {
         justify-content: center;
         align-items: center;
         align-content: center;
-        background-color: rgb(193 198 200);
+        background-color: #C1C6C8FF;
         height: 100px;
-        color: rgb(255 255 255);
+        color: #fff;
         text-align: center;
 
         span {
