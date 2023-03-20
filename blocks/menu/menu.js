@@ -29,7 +29,7 @@ export default function decorate(block) {
     div.className = 'menu-item';
     let link;
     [...div.children].forEach(elem => {
-      if (elem.children[0].hasAttribute('href')) {
+      if (elem.children[0]?.hasAttribute('href')) {
         link = elem.children[0].href;
       }
       if (elem.children.length === 1 && elem.querySelector('picture')) {

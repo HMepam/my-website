@@ -28,5 +28,6 @@ module.exports = {
       { overrides: { '?': 'ignore', ':': 'ignore' } },
     ],
     'no-bitwise': 'off',
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
   },
 };

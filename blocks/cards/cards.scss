@@ -9,7 +9,8 @@
 
 .cards > ul > li {
   border: 1px solid var(--highlight-background-color);
-  background-color: var(--background-color)
+  background-color: var(--background-color);
+  cursor: pointer;
 }
 
 .cards .cards-card-body {

@@ -117,7 +117,7 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
@@ -212,13 +212,6 @@ main .section {
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
-  }
-}
-
-@media (min-width: 900px) {
-  .section > div {
-    max-width: 1200px;
-    margin: auto;
   }
 }
 
